@@ -203,7 +203,7 @@ module JSONAPI
         record_count = resource_klass.count_records(records)
       end
 
-      if (JSONAPI.configuration.top_level_meta_include_page_count && record_count)
+      if (JSONAPI.configuration.top_level_meta_include_page_count && paginator && record_count)
         page_count = paginator.calculate_page_count(record_count)
       end
 
